@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <title>Portfolio - 표호근</title>
+
+  <style>
+    :root{
+      --containerWidth : 1200px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; overflow-x: hidden; }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero-bg {
+      position: absolute;
+      width: 100%;
+      height: 120%;
+      top: 0;
+      left: 0;
+      background: url('https://picsum.photos/1920/1080') center/cover no-repeat;
+      will-change: transform;
+    }
+
+    .hero-title {
+      position: relative;
+      font-size: 48px;
+      font-weight: bold;
+      z-index: 2;
+      transform: translateX(-50%);
+    }
+
+    /* Content */
+    .container {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+    }
+
+    .thumb-wrap {
+      overflow: hidden;
+    }
+
+    .thumbnail {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .thumbnail {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .meta {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Section Parallax */
+    .parallax-section {
+      height: 60vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .parallax-bg {
+      position: absolute;
+      width: 100%;
+      height: 130%;
+      top: 0;
+      left: 0;
+      background: url('https://picsum.photos/1920/1081') center/cover no-repeat;
+      will-change: transform;
+    }
+
+    .hero-title::before{
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: -20px;
+      bottom: 0px;
+      width: 2px;
+      background: rgba(255,255,255,0.4);
+      z-index: -1;
+      border-radius: 12px;
+    }
+
+    .hero-title .main {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+    .hero-title .description {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .hero-title .description .title{
+      font-size: 0.8em;
+      font-weight: 700;
+      color: #eee;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-title">
+      <p class="main">
+        web puplisher <br />
+        & front-end developer<br />
+        표호근<br />
+        Pyo hogeun
+      </p>
+      <p class="description">
+        <span class="title">skilled in</span><br />
+        HTML, CSS, JS<br />
+        React, Vue<br />
+        Git, Figma<br />
+        ... and more
+      </p>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="container">
+    <div class="grid">
+
+      <a href="https://example.com" target="_blank" class="card">
+        <div class="thumb-wrap">
+          <img class="thumbnail" src="https://picsum.photos/400/300?1" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <div class="title">프로젝트 A</div>
+          <div class="desc">반응형 웹 퍼블리싱, 인터랙션 구현</div>
+          <div class="meta">2025.01 | 3인 참여 | HTML, CSS, JS</div>
+        </div>
+      </a>
+
+      <a href="https://example.com" target="_blank" class="card">
+        <div class="thumb-wrap">
+          <img class="thumbnail" src="https://picsum.photos/400/300?2" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <div class="title">프로젝트 B</div>
+          <div class="desc">패럴럭스 + GSAP 애니메이션</div>
+          <div class="meta">2025.02 | 2인 참여 | GSAP</div>
+        </div>
+      </a>
+
+      <a href="https://example.com" target="_blank" class="card">
+        <div class="thumb-wrap">
+          <img class="thumbnail" src="https://picsum.photos/400/300?3" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <div class="title">프로젝트 C</div>
+          <div class="desc">웹 접근성 개선 및 UI 리뉴얼</div>
+          <div class="meta">2025.03 | 4인 참여 | SEO</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Bottom Parallax -->
+  <section class="parallax-section">
+    <div class="parallax-bg"></div>
+  </section>
+
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Parallax
+    gsap.to('.hero-bg', {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Bottom Parallax
+    gsap.to('.parallax-bg', {
+      yPercent: 25,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.parallax-section',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Card 등장 애니메이션
+    gsap.from('.card', {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.grid',
+        start: 'top 80%'
+      }
+    });
+
+  </script>
+
+</body>
+</html>
