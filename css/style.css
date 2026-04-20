@@ -234,6 +234,16 @@ body {
   line-height: 1.4;
   width: 80%;
 }
+.hero-title .contact {
+  display: inline-block;
+  margin-top: 0.2em;
+  padding: 0.5em 1em;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.8em;
+}
+.hero-title .contact a {
+  color: white;
+}
 
 /* Tablet */
 @media (max-width: 1024px) {

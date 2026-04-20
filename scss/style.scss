@@ -237,7 +237,16 @@ body {
     line-height: 1.4;
     width: 80%;
   }
-  
+  .contact{
+    display: inline-block;
+    margin-top: .2em;
+    padding: .5em 1em;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 0.8em;
+    a{
+      color: white;
+    }
+  }
 }
 
 
