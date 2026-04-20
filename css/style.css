@@ -218,18 +218,21 @@ body {
   font-weight: bold;
   line-height: 1.2;
 }
-
 .hero-title .description {
   margin-top: 20px;
   font-size: clamp(1rem, 2.2vw, 1.125rem);
   color: #fff;
   line-height: 1.5;
 }
-
 .hero-title .description .title {
   font-size: 0.8em;
   font-weight: 700;
   color: #eee;
+}
+.hero-title .comment {
+  margin-top: 20px;
+  line-height: 1.4;
+  width: 80%;
 }
 
 /* Tablet */

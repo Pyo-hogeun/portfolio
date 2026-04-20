@@ -213,24 +213,33 @@ body {
   border-radius: 12px;
 }
 
-.hero-title .main {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: bold;
-  line-height: 1.2;
+.hero-title{
+
+  .main {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .description {
+    margin-top: 20px;
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    color: #fff;
+    line-height: 1.5;
+    .title {
+      font-size: 0.8em;
+      font-weight: 700;
+      color: #eee;
+    }
+  }
+  .comment{
+    margin-top: 20px;
+    line-height: 1.4;
+    width: 80%;
+  }
+  
 }
 
-.hero-title .description {
-  margin-top: 20px;
-  font-size: clamp(1rem, 2.2vw, 1.125rem);
-  color: #fff;
-  line-height: 1.5;
-}
-
-.hero-title .description .title {
-  font-size: 0.8em;
-  font-weight: 700;
-  color: #eee;
-}
 
 /* Tablet */
 @media (max-width: 1024px) {
