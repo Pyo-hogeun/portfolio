@@ -130,6 +130,56 @@ body {
   color: #999;
 }
 
+/* Work Experience */
+.work-wrap {
+  margin-top: 20px;
+  border-radius: 14px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+  background: #fff;
+}
+
+.work-head,
+.work-item {
+  display: grid;
+  grid-template-columns: 150px 1.8fr 1fr 1.4fr 1.2fr;
+  gap: 14px;
+  padding: 14px 16px;
+}
+
+.work-head {
+  background: #f8f8f8;
+  font-weight: 700;
+  color: #222;
+  border-bottom: 1px solid #ececec;
+}
+
+.work-item {
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.work-item:last-child {
+  border-bottom: 0;
+}
+
+.work-item .period {
+  font-weight: 700;
+  color: #222;
+}
+
+.work-item .project {
+  font-weight: 700;
+  color: #333;
+}
+
+.work-item .role,
+.work-item .client,
+.work-item .stack {
+  color: #555;
+}
+
 /* Section Parallax */
 .parallax-section {
   height: 60vh;
@@ -195,6 +245,13 @@ body {
   .thumbnail {
     height: 200px;
   }
+  .work-head,
+  .work-item {
+    grid-template-columns: 140px 1.6fr 0.9fr 1.2fr 1.1fr;
+    gap: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
 }
 /* Mobile */
 @media (max-width: 768px) {
@@ -238,5 +295,25 @@ body {
   .parallax-section {
     height: 46vh;
     min-height: 260px;
+  }
+  .work-wrap {
+    border: 0;
+    background: transparent;
+  }
+  .work-head {
+    display: none;
+  }
+  .work-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding: 14px;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    background: #fff;
+  }
+  .work-item:last-child {
+    border-bottom: 1px solid #ececec;
   }
 }
