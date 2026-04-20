@@ -24,7 +24,7 @@ body { font-family: Arial, sans-serif; overflow-x: hidden; }
   height: 120%;
   top: 0;
   left: 0;
-  background: url('https://picsum.photos/1920/1080') center/cover no-repeat;
+  background: url('../image/main-bg.jpg') center/cover no-repeat;
   will-change: transform;
 }
 
@@ -71,7 +71,7 @@ body { font-family: Arial, sans-serif; overflow-x: hidden; }
 .thumbnail {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.6s ease;
 }
 
@@ -82,11 +82,17 @@ body { font-family: Arial, sans-serif; overflow-x: hidden; }
 .card-body {
   padding: 18px;
 }
-
+.year{
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #121212;
+}
 .title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
+  color: #333;
 }
 
 .desc {
@@ -100,7 +106,16 @@ body { font-family: Arial, sans-serif; overflow-x: hidden; }
   font-size: 12px;
   color: #888;
 }
-
+.detail-content{
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.vibility{
+  margin-top: 10px;
+  font-size: 12px;
+  color: #999;
+}
 /* Section Parallax */
 .parallax-section {
   height: 60vh;
