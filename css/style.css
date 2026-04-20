@@ -50,6 +50,9 @@ body {
   max-width: var(--containerWidth);
   margin: auto;
 }
+.container h2 {
+  margin: 1.2em 0;
+}
 
 .grid {
   display: grid;
