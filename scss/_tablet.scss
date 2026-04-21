@@ -1,0 +1,28 @@
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    justify-content: flex-start;
+    padding: 96px 32px 72px;
+  }
+
+  .hero-title {
+    width: min(100%, 720px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .thumbnail {
+    height: 200px;
+  }
+
+  .work-head,
+  .work-item {
+    grid-template-columns: 140px 1.6fr 0.9fr 1.2fr 1.1fr;
+    gap: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+}
