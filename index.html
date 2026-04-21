@@ -7,6 +7,7 @@
   <!-- GSAP CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./js/script.js"></script>
   <title>Portfolio - 표호근</title>
 
 </head>
@@ -352,46 +353,6 @@
   </section>
 
 
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero Parallax
-    gsap.to('.hero-bg', {
-      yPercent: 20,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      }
-    });
-
-    // Bottom Parallax
-    gsap.to('.parallax-bg', {
-      yPercent: 25,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.parallax-section',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      }
-    });
-
-    // Card 등장 애니메이션
-    gsap.from('.card', {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: '.grid',
-        start: 'top 80%'
-      }
-    });
-
-  </script>
 
 </body>
 </html>

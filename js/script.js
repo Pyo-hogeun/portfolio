@@ -1,37 +1,49 @@
-// 프로젝트 데이터 (예시)
-const projects = [
-    {
-        title: "프로젝트 1",
-        description: "웹 퍼블리싱 프로젝트 설명.",
-        githubUrl: "https://github.com/username/project1"
-    },
-    {
-        title: "프로젝트 2",
-        description: "또 다른 프로젝트 설명.",
-        githubUrl: "https://github.com/username/project2"
-    }
-];
+document.addEventListener('DOMContentLoaded', function () {
 
-// 프로젝트 카드 생성 함수
-function createProjectCard(project) {
-    const card = document.createElement('div');
-    card.className = 'project-card';
-    card.innerHTML = `
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <a href="${project.githubUrl}" target="_blank">GitHub 보기</a>
-    `;
-    return card;
-}
+    gsap.registerPlugin(ScrollTrigger);
 
-// 갤러리에 카드 추가
-function loadProjects() {
-    const gallery = document.getElementById('project-gallery');
-    projects.forEach(project => {
-        const card = createProjectCard(project);
-        gallery.appendChild(card);
+    // Hero Parallax
+    gsap.to('.hero-bg', {
+        yPercent: 20,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+        }
     });
-}
 
-// 페이지 로드 시 실행
-document.addEventListener('DOMContentLoaded', loadProjects);
+    // Bottom Parallax
+    gsap.to('.parallax-bg', {
+        yPercent: 25,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.parallax-section',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+        }
+    });
+
+    // Card 등장 애니메이션
+    gsap.from('.card', {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.grid',
+            start: 'top 80%'
+        }
+    });
+
+    //이력 등장
+    gsap.from('.work-item', {
+        y: 30,
+        delay: 0.5,
+        opacity: 0,
+        duration: 0.2,
+        stagger: 0.2,
+    })
+})
